@@ -14,9 +14,9 @@ class DashboardSubscriptionPackageController extends Controller
      */
     public function index()
     {
-        return view('dashboard.Promotion.index', [
+        return Response(view('dashboard.Promotion.index', [
             'promotions' => SubscriptionPackage::latest()->get(),
-        ]);
+        ]));
     }
 
     /**
@@ -26,7 +26,7 @@ class DashboardSubscriptionPackageController extends Controller
      */
     public function create()
     {
-        return view('dashboard.Promotion.create');
+        return Response(view('dashboard.Promotion.create'));
     }
 
     /**
@@ -58,7 +58,7 @@ class DashboardSubscriptionPackageController extends Controller
      */
     public function show(SubscriptionPackage $subscriptionPackage)
     {
-        //
+        return Response();
     }
 
     /**
@@ -69,9 +69,9 @@ class DashboardSubscriptionPackageController extends Controller
      */
     public function edit(SubscriptionPackage $subscriptionPackage)
     {
-        return view('dashboard.Promotion.edit', [
+        return Response(view('dashboard.Promotion.edit', [
             'promotions' => $subscriptionPackage
-        ]);
+        ]));
     }
 
     /**
@@ -83,7 +83,7 @@ class DashboardSubscriptionPackageController extends Controller
      */
     public function update(Request $request, SubscriptionPackage $subscriptionPackage)
     {
-        //
+        return Response();
     }
 
     /**
@@ -94,6 +94,6 @@ class DashboardSubscriptionPackageController extends Controller
      */
     public function destroy(SubscriptionPackage $subscriptionPackage)
     {
-        //
+        return Response();
     }
 }

@@ -14,9 +14,9 @@ class DashboardServiceController extends Controller
      */
     public function index()
     {
-        return view('dashboard.Service.index', [
+        return Response(view('dashboard.Service.index', [
             'services' => Service::latest()->get(),
-        ]);
+        ]));
     }
 
     /**
@@ -26,7 +26,7 @@ class DashboardServiceController extends Controller
      */
     public function create()
     {
-        return view('dashboard.Service.create');
+        return Response(view('dashboard.Service.create'));
     }
 
     /**
@@ -56,7 +56,7 @@ class DashboardServiceController extends Controller
      */
     public function show(Service $service)
     {
-        //
+        return Response();
     }
 
     /**
@@ -67,9 +67,9 @@ class DashboardServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        return view('dashboard.Service.edit', [
+        return Response(view('dashboard.Service.edit', [
             'services' => $service
-        ]);
+        ]));
     }
 
     /**

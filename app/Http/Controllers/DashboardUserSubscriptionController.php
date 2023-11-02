@@ -14,9 +14,9 @@ class DashboardUserSubscriptionController extends Controller
      */
     public function index()
     {
-        return view('dashboard.userSubscription.index', [
+        return Response(view('dashboard.userSubscription.index', [
             'userSubscriptions' => UserSubscription::latest()->get(),
-        ]);
+        ]));
     }
 
     /**
@@ -26,9 +26,9 @@ class DashboardUserSubscriptionController extends Controller
      */
     public function create()
     {
-        return view('dashboard.userSubscription.create', [
+        return Response(view('dashboard.userSubscription.create', [
             'userSubscriptions' => UserSubscription::all()
-        ]);
+        ]));
     }
 
     /**
@@ -39,7 +39,7 @@ class DashboardUserSubscriptionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Response();
     }
 
     /**
@@ -50,7 +50,7 @@ class DashboardUserSubscriptionController extends Controller
      */
     public function show(UserSubscription $userSubscription)
     {
-        //
+        return Response();
     }
 
     /**
@@ -61,7 +61,7 @@ class DashboardUserSubscriptionController extends Controller
      */
     public function edit(UserSubscription $userSubscription)
     {
-        //
+        return Response();
     }
 
     /**
@@ -73,7 +73,7 @@ class DashboardUserSubscriptionController extends Controller
      */
     public function update(Request $request, UserSubscription $userSubscription)
     {
-        //
+        return Response();
     }
 
     /**
@@ -84,6 +84,6 @@ class DashboardUserSubscriptionController extends Controller
      */
     public function destroy(UserSubscription $userSubscription)
     {
-        //
+        return Response();
     }
 }

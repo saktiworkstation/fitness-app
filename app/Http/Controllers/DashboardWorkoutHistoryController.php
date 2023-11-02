@@ -16,9 +16,9 @@ class DashboardWorkoutHistoryController extends Controller
      */
     public function index()
     {
-        return view('dashboard.absention.index', [
+        return Response(view('dashboard.absention.index', [
             'workoutHistories' => WorkoutHistory::latest()->get(),
-        ]);
+        ]));
     }
 
     /**
@@ -28,9 +28,9 @@ class DashboardWorkoutHistoryController extends Controller
      */
     public function create()
     {
-        return view('dashboard.absention.create', [
+        return Response(view('dashboard.absention.create', [
             'subscriptions' => UserSubscription::all(),
-        ]);
+        ]));
     }
 
     /**
@@ -67,7 +67,7 @@ class DashboardWorkoutHistoryController extends Controller
      */
     public function show(WorkoutHistory $workoutHistory)
     {
-        //
+        return Response();
     }
 
     /**
@@ -78,7 +78,7 @@ class DashboardWorkoutHistoryController extends Controller
      */
     public function edit(WorkoutHistory $workoutHistory)
     {
-        //
+        return Response();
     }
 
     /**
@@ -90,7 +90,7 @@ class DashboardWorkoutHistoryController extends Controller
      */
     public function update(Request $request, WorkoutHistory $workoutHistory)
     {
-        //
+        return Response();
     }
 
     /**
@@ -101,6 +101,6 @@ class DashboardWorkoutHistoryController extends Controller
      */
     public function destroy(WorkoutHistory $workoutHistory)
     {
-        //
+        return Response();
     }
 }

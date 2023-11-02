@@ -16,7 +16,7 @@ class ScheduleFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'slug' => $this->faker->slug(),
-            'descriptions' => $this->faker->name(), 'descriptions' => collect($this->faker->paragraphs(mt_rand(1, 2)))->map(fn ($p) => "<p>$p</p>")->implode(''),
+            'descriptions' => collect($this->faker->paragraphs(mt_rand(1, 2))),
             'instructor' => $this->faker->name(),
         ];
     }

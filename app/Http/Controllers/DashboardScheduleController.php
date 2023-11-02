@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Schedule;
+use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
 
 class DashboardScheduleController extends Controller
@@ -14,9 +15,9 @@ class DashboardScheduleController extends Controller
      */
     public function index()
     {
-        return view('dashboard.Schedule.index', [
+        return Response(view('dashboard.Schedule.index', [
             'schedules' => Schedule::latest()->get(),
-        ]);
+        ]));
     }
 
     /**
@@ -26,7 +27,7 @@ class DashboardScheduleController extends Controller
      */
     public function create()
     {
-        return view('dashboard.Schedule.create');
+        return Response(view('dashboard.Schedule.create'));
     }
 
     /**
@@ -68,9 +69,9 @@ class DashboardScheduleController extends Controller
      */
     public function edit(Schedule $schedule)
     {
-        return view('dashboard.Schedule.edit', [
+        return Response(view('dashboard.Schedule.edit', [
             'schedule' => $schedule
-        ]);
+        ]));
     }
 
     /**
