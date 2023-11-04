@@ -17,7 +17,7 @@ class LoginControllerTest extends TestCase
      *
      * @return void
      */
-//    use RefreshDatabase, WithoutMiddleware;
+
 
     public function test_login_view_loads()
     {
