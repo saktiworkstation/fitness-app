@@ -16,7 +16,13 @@ class DSerciveControllerTest extends TestCase
         parent::setUp();
 
         // Membuat dan mengotentikasi pengguna
-        $user = User::factory()->create();
+        $user =  User::create([
+            'name' => 'Sakti',
+            'username' => 'sakti',
+            'email' => 'sakti@gmail.com',
+            'password' => bcrypt('password'),
+            'is_admin' => true,
+        ]);
         $this->actingAs($user);
     }
 
